@@ -1047,7 +1047,7 @@ on property:ro.debuggable=1
     # Give reads to anyone for the window trace folder on debug builds.
     chmod 0775 /data/misc/wmtrace
 
-on init && property:ro.debuggable=1
+on init && property:ro.debuggable=1 && property:ro.console.enable=1
     start console
 
 on userspace-reboot-requested
@@ -1086,3 +1086,8 @@ on userspace-reboot-resume
 
 on property:sys.boot_completed=1 && property:sys.init.userspace_reboot.in_progress=1
   setprop sys.init.userspace_reboot.in_progress ""
+
+on property:sys.boot_completed=1
+    # Restrict permissions to socket file
+    # to hide Magisk & co.
+    chmod 440 /proc/net/unix
