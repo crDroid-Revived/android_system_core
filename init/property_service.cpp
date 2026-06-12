@@ -1082,8 +1082,6 @@ static void SetSafetyNetProps() {
     InitPropertySet("ro.warranty_bit", "0");
     InitPropertySet("ro.debuggable", "0");
     InitPropertySet("ro.secure", "1");
-    InitPropertySet("ro.adb.secure", "1");
-    InitPropertySet("ro.crdroid.version", "");
     InitPropertySet("ro.build.type", "user");
     InitPropertySet("ro.build.tags", "release-keys");
     InitPropertySet("ro.vendor.boot.warranty_bit", "0");
@@ -1091,7 +1089,6 @@ static void SetSafetyNetProps() {
     InitPropertySet("vendor.boot.vbmeta.device_state", "locked");
     InitPropertySet("vendor.boot.verifiedbootstate", "green");
     InitPropertySet("vendor.boot.veritymode", "enforcing");
-    InitPropertySet("ro.oem_unlock_supported", "0");
 }
 
 void PropertyInit() {
